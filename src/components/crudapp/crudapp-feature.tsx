@@ -9,7 +9,7 @@ import { CrudappCreate, CrudappList } from './crudapp-ui'
 
 export default function CrudappFeature() {
   const { publicKey } = useWallet()
-  const { programId } = useCrudappProgram()
+  const { program } = useCrudappProgram()
 
   return publicKey ? (
     <div>
@@ -20,7 +20,7 @@ export default function CrudappFeature() {
         }
       >
         <p className="mb-6">
-          <ExplorerLink path={`account/${programId}`} label={ellipsify(programId.toString())} />
+          <ExplorerLink path={`account/${program.programId.toString()}`} label={ellipsify(program.programId.toString())} />
         </p>
         <CrudappCreate />
       </AppHero>
